@@ -20,7 +20,7 @@ class CollectionList(APIView):
         serializer = CollectionSerializer(collection, many=True)
         return Response(serializer.data)
 
-    def port(self, request):
+    def post(self, request):
         serializer = CollectionSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
